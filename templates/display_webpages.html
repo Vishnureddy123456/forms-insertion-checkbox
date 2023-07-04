@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>display_webpages</h1>
+        <table border="3px">
+            <tr>
+                <th>topic_name</th>
+                <th>name</th>
+                <th>url</th>
+            </tr>
+            <tr>
+                {% for i in EWO %}
+                    <tr>
+                    <td>{{i.topic_name}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.url}}</td>
+                    </tr>
+                {% endfor %}
+            </tr>
+        </table>
+    </center>
+</body>
+</html>
