@@ -7,15 +7,18 @@
 </head>
 <body>
     <center>
+        <h1>accessrecords</h1>
         <form action="" method="POST">
+            <fieldset style="width: fit-content;">
             {% csrf_token %}
-            <label for="topic">topic_name</label>
-            <select name="topic" id="topic" multiple>
-                {% for to in LTO %}
-                <option value="{{to}}">{{to.topic_name}}</option>
+            <label for="name">name</label>
+            <select name="name" id="name" multiple>
+                {% for wo in LWO %}
+                    <option value="{{wo.id}}">{{wo.name}}</option>
                 {% endfor %}
             </select><br><br>
-            <input type="submit" value="retrieve_webpage">
+            <input type="submit" value="retrieve_accessredcords">
+        </fieldset>
         </form>
     </center>
 </body>

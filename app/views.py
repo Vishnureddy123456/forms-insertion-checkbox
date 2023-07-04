@@ -47,6 +47,17 @@ def display_webpages(request):
         d1={'EWO':EWO}
         return render(request,'display_webpages.html',d1)
     return render(request,'retrieve_webpage.html',d)
+def display_accessrecords(request):
+    LWO=Webpage.objects.all()
+    d={'LWO':LWO}
+    if request.method=='POST':
+        MST=request.POST.getlist('name')#to get the selected options
+        EAO=AccessRecord.objects.none()# to create one empty list
+        for i in MST:
+            EAO=EAO|AccessRecord.objects.filter(name=i)
+        d1={'EAO':EAO}
+        return render(request,'display_accessrecords.html',d1)
+    return render(request,'retrieve_accessrecords.html',d)
 def checkbox(request):
     LTO=Topic.objects.all()
     d={'LTO':LTO}
